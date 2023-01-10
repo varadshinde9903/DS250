@@ -1,0 +1,13 @@
+from scipy.stats import binom
+import matplotlib.pyplot as plt
+# Assigning values for p, as its a tossing a coin so the probability is 0.5
+# number of trials will be taken from user.
+n = int(input())
+p = 0.5
+# defining list of r values
+r_values = list(range(n + 1))
+# pmf values
+dist = [binom.pmf(r, n, p) for r in r_values ]
+# plotting the graph 
+plt.bar(r_values, dist)
+plt.show()
